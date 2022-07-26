@@ -17,10 +17,7 @@
                             </div>
                             <form class="user" action={{$action}}>
                                 <x-input-email name="email" />
-                                <div class="form-group">
-                                    <input type="password" class="form-control form-control-user"
-                                        id="exampleInputPassword" placeholder="Password">
-                                </div>
+                                <x-input-password name="password" />
                                 <div class="form-group">
                                     <div class="custom-control custom-checkbox small">
                                         <input type="checkbox" class="custom-control-input" id="customCheck">
