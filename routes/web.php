@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,20 @@ use Illuminate\Support\Facades\Route;
 //     return view('home');
 // });
 
-Auth::routes();
+Auth::routes([
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    'login'    => true,
+
+    'logout'   => true,
+
+    'register' => true,
+
+    'reset'    => false,   // for resetting passwords
+
+    'confirm'  => false,  // for additional password confirmations
+
+    'verify'   => false,  // for email verification
+
+]);
+
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
