@@ -23,8 +23,12 @@
 </head>
 <body>
     <div id="app">
-        
+    @guest
        <x-navbar />
+    @endguest
+    @auth
+       
+    @endauth
 
         <main class="py-4">
             @yield('content')
