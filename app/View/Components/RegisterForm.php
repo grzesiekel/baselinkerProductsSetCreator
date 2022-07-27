@@ -4,17 +4,16 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class AuthForm extends Component
+class RegisterForm extends Component
 {
     /**
      * Create a new component instance.
      *
      * @return void
      */
- 
     public function __construct()
     {
-        
+        //
     }
 
     /**
@@ -24,6 +23,6 @@ class AuthForm extends Component
      */
     public function render()
     {
-        return view('components.auth-form');
+        return view('components.register-form');
     }
 }

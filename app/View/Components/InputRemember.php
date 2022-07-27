@@ -4,17 +4,18 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class AuthForm extends Component
+class InputRemember extends Component
 {
     /**
      * Create a new component instance.
      *
      * @return void
      */
- 
-    public function __construct()
+    public $name;
+
+    public function __construct($name)
     {
-        
+        $this->name = $name;
     }
 
     /**
@@ -24,6 +25,6 @@ class AuthForm extends Component
      */
     public function render()
     {
-        return view('components.auth-form');
+        return view('components.input-remember');
     }
 }
