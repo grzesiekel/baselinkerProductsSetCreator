@@ -26,9 +26,6 @@
     @guest
        <x-navbar />
     @endguest
-    @auth
-       
-    @endauth
 
         <main class="py-4">
             @yield('content')
