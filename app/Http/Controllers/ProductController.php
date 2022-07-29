@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Imports\ProductImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ProductController extends Controller
 {
@@ -53,5 +56,11 @@ class ProductController extends Controller
         return back();
          
     }
+    public function storeCsv(Request $request) {
+      
+        Excel::import(new ProductImport, $request->file('csv'));
+        return back();
+    }
+
   
 }
