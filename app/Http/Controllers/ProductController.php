@@ -62,5 +62,14 @@ class ProductController extends Controller
         return back();
     }
 
+    public function destroy(Product $product)
+    {
+        // $this->authorize('delete', $post);
+
+        $product->delete();
+
+        return back();
+    }
+
   
 }
