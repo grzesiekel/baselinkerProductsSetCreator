@@ -11,7 +11,8 @@ class ProductController extends Controller
         $this->middleware(['auth']);
     }
     public function index(Request $request) {
-        $products = $request->user()->products()->latest()->paginate(20);
+        // $products = $request->user()->products()->latest()->paginate(20);
+        $products = "";
         
         return view('admin.products',[
             'products'=>$products

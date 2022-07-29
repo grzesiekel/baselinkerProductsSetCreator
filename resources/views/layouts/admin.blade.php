@@ -26,11 +26,46 @@
 
 <body>
     <div id="app">
-        @guest
-        <x-navbar />
-        @yield('content')
-        @endguest
-        
+       
+        <main class="py-4">
+            <div id="wrapper">
+
+                <!-- Sidebar -->
+                <x-admin.sidebar />
+                <!-- End of Sidebar -->
+
+                <!-- Content Wrapper -->
+                <div id="content-wrapper" class="d-flex flex-column">
+
+                    <!-- Main Content -->
+                    <div id="content">
+
+                        <!-- Topbar -->
+                        <x-admin.navbar />
+                        <!-- End of Topbar -->
+
+                        <!-- Begin Page Content -->
+                        <div class="container-fluid">
+
+                            <!-- Page Heading -->
+                            @yield('content')
+
+                        </div>
+                        <!-- /.container-fluid -->
+
+                    </div>
+                    <!-- End of Main Content -->
+
+                    <!-- Footer -->
+                    <x-footer />
+                    <!-- End of Footer -->
+
+                </div>
+                <!-- End of Content Wrapper -->
+
+            </div>
+        </main>
+      
     </div>
 
     <!-- Core plugin JavaScript-->
