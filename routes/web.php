@@ -39,3 +39,6 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 
 //Products
 Route::get('/products',[ProductController::class,'index'])->name('admin.products');
+Route::post('/products',[ProductController::class,'store'])->name('admin.products');
+Route::post('/products/csv',[ProductController::class,'storeCsv'])->name('admin.products.csv');
+Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
