@@ -15,8 +15,8 @@ class ProductController extends Controller
     }
 
     public function index(Request $request) {
-        // $products = $request->user()->products()->latest()->paginate(20);
-        $products = "";
+        $products = $request->user()->products()->latest()->paginate(20);
+        
         
         return view('admin.products',[
             'products'=>$products
