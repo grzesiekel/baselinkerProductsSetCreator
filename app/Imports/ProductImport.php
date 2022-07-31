@@ -3,9 +3,11 @@
 namespace App\Imports;
 
 use App\Models\Product;
+use Illuminate\Http\Request;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class ProductImport implements ToModel
+class ProductImport implements ToModel, WithHeadingRow
 {
     /**
     * @param array $row

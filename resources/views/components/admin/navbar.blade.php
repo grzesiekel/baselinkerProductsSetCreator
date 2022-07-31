@@ -65,8 +65,12 @@
                                 aria-labelledby="userDropdown">
                                
                                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Logout
+                                    
+                                    <form action="{{ route('logout') }}" method="post">
+                                        @csrf
+                                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                        <button type="submit" class="btn btn-link">Logout</button>
+                                    </form>
                                 </a>
                             </div>
                         </li>

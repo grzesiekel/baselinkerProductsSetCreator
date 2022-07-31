@@ -1,11 +1,11 @@
-<div class="container">
+<div class="container-fluid">
 
     <!-- Outer Row -->
     <div class="row justify-content-center">
 
-        <div class="col-xl-18 col-lg-12 col-md-12 col-sm-12">
+        <div class="col-xl-18 col-lg-12 col-md-12 col-sm-12 ">
 
-            <div class="card o-hidden border-0 shadow-lg my-5">
+            <div class="card o-hidden border-0 shadow-lg my-5 w-50 mx-auto">
                 <div class="card-body p-0">
                     <!-- Nested Row within Card Body -->
                     <div class="row ">
