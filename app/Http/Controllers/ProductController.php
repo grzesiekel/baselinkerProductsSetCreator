@@ -28,7 +28,7 @@ class ProductController extends Controller
         $this->validate($request, [
             'name' => 'required',
             'sku' => 'required',
-            'baseId'=>'unique:collections,baseId',
+            'baseId'=>'unique:products,baseId',
             'image' => 'image|mimes:jpg,png,jpeg,gif,svg,xlsx,xls|max:2048'
         ]);
         
