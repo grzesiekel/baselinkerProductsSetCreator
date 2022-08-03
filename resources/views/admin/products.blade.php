@@ -41,7 +41,7 @@
                <h1>Produkty</h1>
             </div>
             {{$products->links()}}
-            <x-admin.products-list :products="$products"/>
+            <x-admin.products-list :products="$products" />
          </div>
       </div>
 
