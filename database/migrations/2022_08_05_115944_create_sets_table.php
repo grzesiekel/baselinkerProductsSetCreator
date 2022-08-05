@@ -15,7 +15,13 @@ class CreateSetsTable extends Migration
     {
         Schema::create('sets', function (Blueprint $table) {
             $table->id();
+            $table->integer('baseId')->nullable();
+            $table->string('name');
+            $table->string('sku');
+            $table->string('image')->nullable();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
+        
         });
     }
 
