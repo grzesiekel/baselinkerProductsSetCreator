@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Set extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'name',
+        'baseId',
+        'sku',
+        'image',
+        'user_id'
+    ];
 }
