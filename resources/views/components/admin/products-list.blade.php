@@ -10,7 +10,7 @@
             @method('DELETE')
             <button type="submit" class="btn btn-outline-dark">usuń</button>
         </form>
-
+    
     </div>
 </div>
 @endforeach
