@@ -52,4 +52,11 @@ class SetController extends Controller
 
         return back();
     }
+
+    public function storeCsv(Request $request)
+    {
+
+        Excel::import(new ProductImport, $request->file('csv'));
+        return back();
+    }
 }
