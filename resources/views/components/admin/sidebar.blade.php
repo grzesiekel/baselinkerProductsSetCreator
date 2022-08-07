@@ -38,7 +38,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Własne produkty</h6>
                 <a class="collapse-item" href="{{route('admin.products')}}">Produkty</a>
-                <a class="collapse-item" href="{{route('home')}}">Zestawy</a>
+                <a class="collapse-item" href="{{route('admin.sets')}}">Zestawy</a>
             </div>
         </div>
     </li>
