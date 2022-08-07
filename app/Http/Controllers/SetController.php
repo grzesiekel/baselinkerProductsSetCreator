@@ -43,7 +43,7 @@ class SetController extends Controller
         $sku = ltrim($sku);
         $sku = rtrim($sku);
 
-        $request->user()->products()->create([
+        $request->user()->sets()->create([
             'name' => $request->name,
             'baseId' =>  $request->baseId,
             'sku' => $sku,

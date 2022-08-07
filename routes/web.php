@@ -46,10 +46,10 @@ Route::delete('/products/{product}', [ProductController::class, 'destroy'])->nam
 
 //Sets
 
-Route::get('/admin/sets',[SetController::class,'index'])->name('admin.sets');
-Route::get('/admin/sets/{set}',[SetController::class,'show'])->name('admin.sets.show');
-Route::post('/admin/sets',[SetController::class,'store'])->name('admin.sets');
-Route::post('/admin/sets/csv',[SetController::class,'storeCsv'])->name('admin.sets.csv');
-Route::delete('/admin/sets/{set}', [SetController::class, 'destroy'])->name('admin.sets.destroy');
-Route::post('/admin/sets/attach/{set}/{product}', [SetController::class, 'attachProduct'])->name('admin.sets.attachProduct');
-Route::delete('/admin/sets/detach/{set}/{product}', [SetController::class, 'detachProduct'])->name('admin.sets.detachProduct');
+Route::get('/sets',[SetController::class,'index'])->name('admin.sets');
+Route::get('/sets/{set}',[SetController::class,'show'])->name('admin.sets.show');
+Route::post('/sets',[SetController::class,'store'])->name('admin.sets');
+Route::post('/sets/csv',[SetController::class,'storeCsv'])->name('admin.sets.csv');
+Route::delete('/sets/{set}', [SetController::class, 'destroy'])->name('admin.sets.destroy');
+Route::post('/sets/attach/{set}/{product}', [SetController::class, 'attachProduct'])->name('admin.sets.attachProduct');
+Route::delete('/sets/detach/{set}/{product}', [SetController::class, 'detachProduct'])->name('admin.sets.detachProduct');
