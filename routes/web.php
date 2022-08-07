@@ -42,3 +42,13 @@ Route::get('/products',[ProductController::class,'index'])->name('admin.products
 Route::post('/products',[ProductController::class,'store'])->name('admin.products');
 Route::post('/products/csv',[ProductController::class,'storeCsv'])->name('admin.products.csv');
 Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
+
+//Sets
+
+Route::get('/admin/sets',[SetController::class,'index'])->name('admin.sets');
+Route::get('/admin/sets/{set}',[SetController::class,'show'])->name('admin.sets.show');
+Route::post('/admin/sets',[SetController::class,'store'])->name('admin.sets');
+Route::post('/admin/sets/csv',[SetController::class,'storeCsv'])->name('admin.sets.csv');
+Route::delete('/admin/sets/{set}', [SetController::class, 'destroy'])->name('admin.sets.destroy');
+Route::post('/admin/sets/attach/{set}/{product}', [SetController::class, 'attachProduct'])->name('admin.sets.attachProduct');
+Route::delete('/admin/sets/detach/{set}/{product}', [SetController::class, 'detachProduct'])->name('admin.sets.detachProduct');
