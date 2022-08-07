@@ -16,4 +16,8 @@ class Product extends Model
         'image',
         'user_id'
     ];
+
+    public function products() {
+        return $this->belongsToMany(Product::class)->withPivot("quantity");
+    }
 }
