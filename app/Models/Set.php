@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Set extends Model
 {
@@ -15,4 +16,7 @@ class Set extends Model
         'image',
         'user_id'
     ];
+    public function products() {
+        return $this->belongsToMany(Product::class)->withPivot("quantity");
+    }
 }
