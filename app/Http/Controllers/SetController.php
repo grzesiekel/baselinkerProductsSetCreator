@@ -18,4 +18,38 @@ class SetController extends Controller
             'sets'=>$sets
         ]);
     }
+
+    public function store(Request $request)
+    {
+        // dd($request);
+        $this->validate($request, [
+            'name' => 'required',
+            'sku' => 'required',
+            'image' => 'image|mimes:jpg,png,jpeg,gif,svg,xlsx,xls|max:2048'
+        ]);
+
+
+        // dd($file);
+        if ($request->hasFile('image')) {
+
+            $filename = $request->user()->name . $request->image->getClientOriginalName();
+
+            $request->image->storeAs('img', $filename, 'public');
+        } else {
+            $filename = '';
+        }
+
+        $sku = strtolower($request->sku);
+        $sku = ltrim($sku);
+        $sku = rtrim($sku);
+
+        $request->user()->products()->create([
+            'name' => $request->name,
+            'baseId' =>  $request->baseId,
+            'sku' => $sku,
+            'image' => $filename,
+        ]);
+
+        return back();
+    }
 }
