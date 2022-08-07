@@ -11,7 +11,8 @@ class SetController extends Controller
         $this->middleware(['auth']);
     }
     public function index(Request $request) {
-        $sets = $request->user()->sets()->latest()->paginate(20);
+        // $sets = $request->user()->sets()->latest()->paginate(20);
+        $sets = [];
         
         return view('admin.sets',[
             'sets'=>$sets
