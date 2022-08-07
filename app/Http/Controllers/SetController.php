@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Set;
+use App\Imports\SetImport;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class SetController extends Controller
 {
@@ -56,7 +59,16 @@ class SetController extends Controller
     public function storeCsv(Request $request)
     {
 
-        Excel::import(new ProductImport, $request->file('csv'));
+        Excel::import(new SetImport, $request->file('csv'));
+        return back();
+    }
+
+    public function destroy(Set $set)
+    {
+        // $this->authorize('delete', $post);
+
+        $set->delete();
+
         return back();
     }
 }
