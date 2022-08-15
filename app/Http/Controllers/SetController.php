@@ -78,7 +78,7 @@ class SetController extends Controller
         $name = '%' . $request->productsName . '%';
         $products = $request->user()->products()->where('name','like',$name)->get();
         // dd($products);
-        return view('admin.collection', [
+        return view('admin.set', [
             'products' => $products,
             'set' =>$set,
             'setProducts'=>$setProducts
