@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Set;
+use App\Models\Product;
 use App\Imports\SetImport;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
@@ -83,5 +84,16 @@ class SetController extends Controller
             'set' =>$set,
             'setProducts'=>$setProducts
         ]);
+    }
+    public function attachProduct(Request $request,Set $set, Product $product) {
+        $this->validate($request, [
+            'quantity' => 'required'
+        ]);
+        $set->products()->attach($product,['quantity'=>$request->quantity]);
+        return back();
+    }
+    public function detachProduct(Set $set, Product $product){
+        $set->products()->detach($product);
+        return back();
     }
 }
