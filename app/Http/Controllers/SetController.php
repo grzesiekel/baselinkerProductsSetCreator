@@ -71,4 +71,17 @@ class SetController extends Controller
 
         return back();
     }
+    public function show(Request $request,Set $set)
+    {
+        $setProducts = $set->products;
+        
+        $name = '%' . $request->productsName . '%';
+        $products = $request->user()->products()->where('name','like',$name)->get();
+        // dd($products);
+        return view('admin.collection', [
+            'products' => $products,
+            'set' =>$set,
+            'setProducts'=>$setProducts
+        ]);
+    }
 }
