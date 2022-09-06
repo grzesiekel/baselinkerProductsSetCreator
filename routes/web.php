@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SetController;
@@ -38,6 +39,10 @@ Auth::routes([
 ]);
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//orders
+
+Route::get('/orders', [OrderController::class, 'show'])->name('orders');
 
 //Products
 Route::get('/products',[ProductController::class,'index'])->name('admin.products');
