@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Http;
 class BaselinkerService {
     private $token;
     public function __construct(){
-        $this->token = '2104-16553-U04FAJEUAHCJ59QOYZPPVJZX73IOCXMFV0CU6K7HS0QHOHIWII6GXKSL4A2HBYRE';
+        $this->token = '';
     }
     public function getOrderById($orderId) {
         $parameters = ['order_id' => $orderId];;
