@@ -87,7 +87,7 @@ class SetController extends Controller
     }
     public function attachProduct(Request $request,Set $set, Product $product) {
         $this->validate($request, [
-            'quantity' => 'required'
+            'quantity' => 'required|min:1'
         ]);
         $set->products()->attach($product,['quantity'=>$request->quantity]);
         return back();

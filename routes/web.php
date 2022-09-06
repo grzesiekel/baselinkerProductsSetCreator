@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SetController;
+use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\ProductController;
 
 /*
@@ -53,3 +54,23 @@ Route::post('/sets/csv',[SetController::class,'storeCsv'])->name('admin.sets.csv
 Route::delete('/sets/{set}', [SetController::class, 'destroy'])->name('admin.sets.destroy');
 Route::post('/sets/attach/{set}/{product}', [SetController::class, 'attachProduct'])->name('admin.sets.attachProduct');
 Route::delete('/sets/detach/{set}/{product}', [SetController::class, 'detachProduct'])->name('admin.sets.detachProduct');
+
+//Artisan commands
+Route::get('reboot',function(){
+    Artisan::call('view:clear');
+    Artisan::call('route:clear');
+    Artisan::call('config:clear');
+    Artisan::call('cache:clear');
+    Artisan::call('key:generate');
+  });
+  Route::get('migrate',function(){
+    Artisan::call('migrate');
+ 
+ });
+ Route::get('migrate-fresh',function(){
+    Artisan::call('migrate:fresh');
+ 
+ });
+ Route::get('rollback',function(){
+    Artisan::call('migrate:rollback');
+ });
