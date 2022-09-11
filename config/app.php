@@ -16,6 +16,11 @@ return [
     'name' => env('APP_NAME', 'Laravel'),
 
     /*
+        baselinker token
+    */
+    'baselinker_token'=> env('BASELINKER_TOKEN',''),
+
+    /*
     |--------------------------------------------------------------------------
     | Application Environment
     |--------------------------------------------------------------------------

@@ -6,9 +6,10 @@ use Illuminate\Support\Facades\Http;
 class BaselinkerService {
     private $token;
     public function __construct(){
-        $this->token = '';
+        $this->token = config('app.baselinker_token');
     }
     public function getOrderById($orderId) {
+        
         $parameters = ['order_id' => $orderId];;
         $response = Http::asForm()->post('https://api.baselinker.com/connector.php',[
             'token' => $this->token,
