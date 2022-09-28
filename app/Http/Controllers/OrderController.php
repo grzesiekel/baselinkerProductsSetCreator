@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Services\BaselinkerService;
 use Illuminate\Http\Request;
+use App\Services\OrderService;
+use App\Services\BaselinkerService;
 
 class OrderController extends Controller
 {
-    public function show(BaselinkerService $baselinker) {
-        $orders = $baselinker->getOrderById('449176072');
-        dd($orders);
+    public function show(OrderService $order) {
+        $products = $order->getProductsFromSets();
+        dd($products);
     }
 }

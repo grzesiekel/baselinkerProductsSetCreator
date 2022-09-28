@@ -15,7 +15,8 @@ class Product extends Model
         'baseId',
         'sku',
         'image',
-        'user_id'
+        'user_id',
+        'category'
     ];
 
     public function sets() {

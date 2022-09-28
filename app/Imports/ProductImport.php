@@ -22,7 +22,8 @@ class ProductImport implements ToModel, WithHeadingRow
             "sku" => $row['produkt_sku'],
             "baseId" => $row['produkt_id'],
             "image" => $row['zdjecie'],
-            "user_id"=>$request['id']
+            "user_id"=>$request['id'],
+            "category"=>$row['kategoria_decorative'] ?? 'inna'
         ]);
     }
 }

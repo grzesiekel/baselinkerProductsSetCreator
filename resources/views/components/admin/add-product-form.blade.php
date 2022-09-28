@@ -8,6 +8,14 @@
          <div class="form-group">
             <input type="text" class="form-control form-control-user" id="name" name="name" placeholder="Nazwa kolekcji">
          </div>
+         @error('category')
+         <div class="invalid-feedback d-block">
+            {{$message}}
+         </div>
+         @enderror
+         <div class="form-group">
+            <input type="text" class="form-control form-control-user" id="category" name="category" placeholder="Kategoria">
+         </div>
          @error('sku')
          <div class="invalid-feedback d-block">
             {{$message}}

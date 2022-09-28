@@ -55,6 +55,7 @@ class ProductController extends Controller
             'baseId' =>  $request->baseId,
             'sku' => $sku,
             'image' => $filename,
+            'category' =>$request->category
         ]);
 
         return back();
