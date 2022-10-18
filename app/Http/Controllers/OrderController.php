@@ -8,8 +8,18 @@ use App\Services\BaselinkerService;
 
 class OrderController extends Controller
 {
-    public function show(OrderService $order) {
-        $products = $order->getProductsFromSets();
-        dd($products);
+    public function show(OrderService $order,Request $request) {
+        if($request->id){
+            $products = $order->getProductsFromOrder($request->id);
+            
+            if($products){
+                $categories = $order->groupProductsByCategory($products);
+            }
+            
+        }else {
+            $products=[];
+        }
+        // dd($categories);
+        return view('orders', ['products'=>$products, 'categories'=>$categories]);
     }
 }

@@ -27,10 +27,10 @@
 
 <body>
     <div id="app">
-        @guest
+        
         <x-navbar />
         @yield('content')
-        @endguest
+        
         
     </div>
 
