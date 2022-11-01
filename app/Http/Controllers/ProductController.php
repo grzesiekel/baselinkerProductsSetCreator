@@ -49,12 +49,13 @@ class ProductController extends Controller
         $sku = strtolower($request->sku);
         $sku = ltrim($sku);
         $sku = rtrim($sku);
+        $image = config('app.url') . '/storage/img/' . $filename;
 
         $request->user()->products()->create([
             'name' => $request->name,
             'baseId' =>  $request->baseId,
             'sku' => $sku,
-            'image' => $filename,
+            'image' => $image,
             'category' =>$request->category
         ]);
 

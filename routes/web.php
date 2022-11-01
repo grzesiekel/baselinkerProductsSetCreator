@@ -28,7 +28,7 @@ Auth::routes([
 
     'logout'   => true,
 
-    'register' => true,
+    'register' => false,
 
     'reset'    => false,   // for resetting passwords
 
@@ -61,21 +61,3 @@ Route::post('/sets/attach/{set}/{product}', [SetController::class, 'attachProduc
 Route::delete('/sets/detach/{set}/{product}', [SetController::class, 'detachProduct'])->name('admin.sets.detachProduct');
 
 //Artisan commands
-Route::get('reboot',function(){
-    Artisan::call('view:clear');
-    Artisan::call('route:clear');
-    Artisan::call('config:clear');
-    Artisan::call('cache:clear');
-    Artisan::call('key:generate');
-  });
-  Route::get('migrate',function(){
-    Artisan::call('migrate');
- 
- });
- Route::get('migrate-fresh',function(){
-    Artisan::call('migrate:fresh');
- 
- });
- Route::get('rollback',function(){
-    Artisan::call('migrate:rollback');
- });
