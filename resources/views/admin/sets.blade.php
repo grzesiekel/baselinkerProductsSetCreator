@@ -46,6 +46,7 @@
                <div class="d-flex flex-row"><img class="rounded" src="{{$set->image}}" width="40">
                   <div class="ml-2"><span class="font-weight-bold d-block">{{$set->sku}}</span><span class="spec">{{$set->name}}</span></div>
                </div>
+               <span class="badge badge-primary">{{$set->products->count()}}</span>
                <!-- <div class="d-flex flex-row align-items-center"><span class="d-block">2</span></div> -->
                <div class="d-flex flex-row align-items-center">
                   <form class="d-block p-2" action="{{route('admin.sets.destroy',$set)}}" method="post">
@@ -53,6 +54,7 @@
                      @method('DELETE')
                      <button type="submit" class="btn btn-outline-dark">usuń</button>
                   </form>
+                  
                   <a class="btn btn-primary" href="{{route('admin.sets.show',$set)}}" role="button">dodaj produkty</a>
                </div>
             </div>
